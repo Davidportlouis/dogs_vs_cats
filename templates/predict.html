@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Predict</title>
+    </head>
+    <body>
+        <img src= "static/uploads/{{img}}" alt="class_image">
+        <div>
+            <h5>Class Prediction</h5>
+            <p>Cat: <em>{{cat}}%</em></p>
+            <p>Dog: <em>{{dog}}%</em></p>
+            {% if cat > dog %}
+                <p>It's a <em>Cat!</em> Meaow</p>
+            {% else %}
+                <p>It's a <em>Dog!</em> Bow..</p>
+            {% endif %}
+        </div>
+    </body>
+</html>
+
+
