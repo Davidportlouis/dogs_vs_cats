@@ -27,9 +27,9 @@ def pred_class(image):
     return (preds[0,0].item(),preds[0,1].item())
 
 
-@app.route('/index')
+@app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html',title="Home")
 
 @app.route('/predict',methods=['GET','POST'])
 def predict():
@@ -37,7 +37,7 @@ def predict():
         f = request.files['image']
         f.save(os.path.join(app.config['UPLOAD_FOLDER'],f.filename))
         predict = pred_class('./static/uploads/' + f.filename)
-        return render_template('predict.html',img=f.filename,cat=round(predict[0]*100,2),dog=round(predict[1]*100,2))
+        return render_template('predict.html',img=f.filename,cat=round(predict[0]*100,2),dog=round(predict[1]*100,2),title="Prediction")
 
 if __name__ == "__main__":
     app.run(debug=True)
