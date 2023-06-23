@@ -43,6 +43,6 @@ _PyTorch ConvNet architecture_
 
 > Test loss: 0.427
 
-> Test accuracy: 0.805
+> Test accuracy: 0.85
   
   
